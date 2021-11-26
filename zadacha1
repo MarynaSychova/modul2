@@ -4,30 +4,30 @@
 int main()
 {
   int N;
-	int K;
+  int K;
 	
   do {
-		printf("Кількість поверхів: ");
-		scanf("%i", &N);
-	} while (N < 0);
+	printf("Кількість поверхів: ");
+	scanf("%i", &N);
+  } while (N < 0);
 
-	do {
-		printf("Кількість людей на першому поверсі: ");
-		scanf("%i", &K);
-	} while (K < 0 || K > 1000);
+  do {
+	printf("Кількість людей на першому поверсі: ");
+	scanf("%i", &K);
+  } while (K < 0 || K > 1000);
 	
   //Поверхи
-	int floors[N];
-	floors[0] = K;
+  int floors[N];
+  floors[0] = K;
 	
-	int people_top = 0;
+  int people_top = 0;
 	
   //Обчислити кількість людей на верхніх поверхах
-	for (int i = 1; i < N; i++)
-	{
-		floors[i] = floors[i - 1] + 4;
-		people_top += floors[i];
-	}
+  for (int i = 1; i < N; i++)
+  {
+	floors[i] = floors[i - 1] + 4;
+	people_top += floors[i];
+  }
 	
   printf("Кількість людей на верхніх поверхах: %i", people_top);
-}
+  }
